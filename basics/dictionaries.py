@@ -29,7 +29,7 @@ not a == 4 # True (потому что a == 5)
 тело1 if условие else тело2 
 
 a = 5 
-res= 'Hello' if a == 5 else 'Bye'
+res = 'Hello' if a == 5 else 'Bye'
 print (res)
 #Hello если a == 5
 #Bye если a !=5
@@ -57,7 +57,7 @@ print (a)
      "a":4,
      4.5: {"a":5},
      {"s":5}: 44 #TypeError: unhashable type: 'dict'
-}
+     }
 
 print(dict_[4.5]) # {"a":5}
 print(dict_[4.5]["a"]) #5
