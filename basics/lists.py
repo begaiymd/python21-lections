@@ -10,7 +10,11 @@ list_[-1]["a"] #3
 "===================Создание списков================"
 list1 = [1,2,3]
 list2 = list('hello') # ['h', 'e', 'l', 'l', 'o']
-#back to combine use join
+list3 = list(range(1,11)) #1,2,3,4,5,67,8,9,10]
+list4 = [1] * 5 #[1,1,1,1,1]
+#duplicates all values
+#again to combine use join
+
 
 "======================Методы списков================"
 #dir(list) - to see methods
