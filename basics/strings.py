@@ -87,7 +87,7 @@ string [5] # ''
 
 #срезы - подстрока строки 
 string[0:5] #'hello'
-string[0:6] #'hello '
+string[0:5] #'hello '
 string[2:4] #'ll'
 string[0:5][2:4] #'ll'
 
@@ -124,4 +124,4 @@ print (id(b))
 print(hash(a))
 print(hash(a))
 
-id(a) == id(b) #true
+id(a) == id(b)
