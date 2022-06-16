@@ -18,12 +18,16 @@ list4 = [1] * 5 #[1,1,1,1,1]
 
 "======================Методы списков================"
 #dir(list) - to see methods
+# append добавляет элемент в конец списка
+list_ = []
 list_.append(1)
 print(list_) # [1]
 list_.append("hello")
 print(list_) # [1, "hello"]
 list_.append([1,2,3,4])
 print(list_) #[1, "hello", [1,2,3,4]]
+
+list_.append(1,2,3) # TypeError: append() takes exactly one argument (3 given)
 
 list_.append(1,2,3,4) #TypeError: takes only one argument 
 
@@ -42,7 +46,7 @@ list_.count('h') #0
 list_.count('hello') #3
 len(list_) #6
 
-#Len - считает кол-во объектов в списке
+#len - считает кол-во объектов в списке
 list_ = [1,2,[3,4,5],6,7,[8,9,10]]
 len(list_) #6
 
@@ -53,12 +57,12 @@ list1.extend(list2)
 print(list1) #[1,2,3,4,5,6]
 print(list2) #[4,5,6]
 
-#extend - возвращает индекс первого вхождения принятого элемента
+#index - возвращает индекс первого вхождения принятого элемента
 list1 = [1,2,3,4,1,2,3,4,5,1]
 list1.index(3) #2
 list1.index(1) #0
 
-#extend - добавляет элемент по индексу list.insert(index, obj)
+#insert - добавляет элемент по индексу list.insert(index, obj)
 list_=[1,2,3]
 list_.insert(0, "hello")
 print(list_) #[hello,1,2,3]

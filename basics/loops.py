@@ -1,8 +1,8 @@
 "=======================Циклы========================="
 #циклы - это блок кода который повторяется несколько раз 
-#for - цикл, который работает с итерируемыит объектами. Цикл заканчивает свою работу, когда он дошел до
-# 
-#
+# for - цикл, который работает с итерируемыми обьектами. цикл заканчивает свою работу, когда он дошел до конца (до последнего элемента) в итерируемом обьекте
+# while - цикл, который работает до тех пор пока условие верное
+
 count = 10 
 while count != 0:
     print(count)
@@ -24,13 +24,13 @@ for i in [1,2,3]:
     print(i)
 #1 2 3
 
-for i in range(1,11,2,):
+for i in range(5):
     print(i)
-#0 1 2 3 4 
+# 0 1 2 3 4
 
-for i in range (1,10):
+for i in range(1, 10):
     print(i)
-#1,2,3,4,5,6,7,8,9
+# 1 2 3 4 5 6 7 8 9
 
 for i in 12345:
     print(i)
@@ -43,9 +43,8 @@ for i in '12345':
 num = 12345678
 sum = 0
 for i in str(num):
-    #sum = sum + (i) - will be TypeError
-    sum = sum + int(i)
-print(sum)
+    #sum = sum + (i) - will be TypeError: unsupported operand type(s) for +: 'int' and 'str'
+sum = sum + int(i)
 #sum = 36
 
 string = 'hello'
@@ -75,6 +74,12 @@ for i in list_:
     list_.append('4')
 #will work for infinity times by addding 4 to each new iteration of list_
 
+list_ = [1,2,3]
+for i in list_:
+    print(i)
+    # list_.append("hello") 
+    # будет работать бесконечно
+
 string = 'hello'
 for i in string:
     print(i)
@@ -94,6 +99,22 @@ for i in ranage(10):
         break 
     print(i)
 
+for i in range(10):
+    print(i)
+    if i == 3:
+        break
+# 0 1 2 3
+
+for i in range(10):
+    if i == 3: break
+    print(i)
+# 0 1 2    
+
+for i in range(10):
+    if i < 3:
+        continue 
+print(i)
+#3 4 5 6 7 8 9 
 
 for i in range(10):
     if i == 3:
@@ -101,12 +122,6 @@ for i in range(10):
 print(i)
 #0 1 2 4 5 6 7 8 9 
 
-
-for i in range(10):
-    if i < 3:
-        continue 
-print(i)
-#3 4 5 6 7 8 9 
 
 for i in range(10):
     print(i)
@@ -135,11 +150,21 @@ for key in dict1:
     print(key)
 # "a" "b" "c" "d"
 
+# при итерации dict_keys, мы получим его ключи
+for key in dict1.keys():
+    print(key)
+# "a" "b" "c" "d"
+
 #при итерации dict_values мы будем получать значения словаря
 for value in dict1.values():
     print(value)
 #1 2 3 4
 
+for key in dict1:
+    print(dict1[key])
+    # так мы тоже выведем значения
+
+# при итерации dict_items, мы будем получать tuple из ключа и значения
 for items in dict1.items():
     key = items[0]
     value = items[1]
@@ -171,11 +196,20 @@ else:
     print ("else")
 #сработает только если цикл вообще ни разу не отработал - получим 'else'
 
+
 for i in [1,2,3]:
     print("for")
 else: 
     print ("else")
 #will print 'for'
+
+
+while 0:
+    print("while")
+else:
+    # не сработает только если цикл был прерван break
+    print("else")
+
 
 a = 1
 while a:
@@ -185,7 +219,3 @@ while a:
 else:
     #не сработает только если цикл был прерван break 
     print("else")
-
-
-
-
