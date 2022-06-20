@@ -127,3 +127,28 @@ print(popped) #d
 
 #метод popitem удаляет и возвращает последнюю пару
 print(dict1.popitem())
+
+
+#to get values from dictionaries we can use method get or by index
+# d['key']
+# d.get(key)
+# d.keys() - все ключи 
+# d.values() - все значения 
+# d.items() - вообще все 
+#d.pop(key)
+
+user = {'email': 'abc@mail.com', 
+        'password': 'password',
+        'password': 'password'}
+
+user.get('password')
+user['password']
+
+
+l = [1,[1,2]]
+l[1][1] #to get 2 in the dictionary 
+
+d = {'key': {'key2': 'value2'}}
+d2 = {}
+d2 = d['key']
+d2['key2'] #value2

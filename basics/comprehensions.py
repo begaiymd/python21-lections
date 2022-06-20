@@ -6,7 +6,7 @@
 
 "======================List comprehension============="
 
-list = []
+list_ = []
 for i in range(1,11):
     list_.append(i)
 #list_ = [1,2,3,4,5,6,7,8,9,10]
@@ -41,9 +41,9 @@ list_ = [i for i in range(2,11,2)]
 [print(i) for i in range(10)]
 # [None,None,None,None,None,None,None,None,None,None]
 
-list_ = ["hello" for in range(10)]
+list_ = ["hello", for in range(10)]
 #["hello","hello","hello","hello","hello","hello","hello","hello","hello","hello","hello"]
-
+ 
 print([input() for i in range(10)])
 # на каждой  итерации запрашивает инпут 
 
