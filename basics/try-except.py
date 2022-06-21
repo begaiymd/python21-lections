@@ -24,16 +24,20 @@ KeyError # исключение которое выходит когда мы о
 
 dict_ = {"a": 1}
 # dict_{'b'}    -KeyError
-# dict_{'b'}
+# dict_.pop('b')    - KeyError: 'b'
 
+print(dict_.get('b'))  # не ошибка, выйдет None если ключа нет
 
 ValueError #выходит когда мы пытаемся распаковать какую-то последовательность  где количество переменных и элементов в последовательности не совпадает 
-# или когда 
+# или когда мы в функцию передаем некорректный для нее тип данных
+
 #a,b,c - 'ab'   - ValueError: not enough values to unpack (expected 2, got 2)
 a,b = 'ab' # 2 символа могут распаковаться на 2 переменные 
+
 #int('10d')  -ValueError: invalid literal for int() with base 10: '10d'
 
 TypeError # когда мы пытаемсч использовать методы не свойственные какому-то типу данных
+# или когда мы пытаемся передать в функцию больше или меньше аргументов, чем принимает функция
 
 #for i in 12345678:  -TypeError: 'int' object is not iterable 
 #    print(i)
@@ -54,19 +58,21 @@ TypeError # когда мы пытаемсч использовать метод
 
 IndentationError # когда мы неправильно используем отступы
 #   a=4     -IndentationError: unexpected indent
-# a=4
+
 #for i in range(1):
 #print(i)     -IndentationError: expected an indent block
 
 
 ZeroDivisionError #выходит при делении на 0
-#3 // 0     -ZeroDivisionError 
 
+# 45 / 0     - ZeroDivisionError: division by zero
+# 3 // 0     - ZeroDivisionError: integer division or modulo by zero
+# 3 % 0      - ZeroDivisionError: integer division or modulo by zero
 
 AttributeError # выходит когда мы обращаемся к несуществуещему аттрибуту или методу объекта
 
-# [].replace('a', '')   -AttributeError: 'list' object has no attribute 'replace'
-
+# [].replace('a', '')   - AttributeError: 'list' object has no attribute 'replace'
+# ''.pop(0)   - AttributeError: 'str' object has no attribute 'pop'
 
 
 "===========================Обработка исключений============================"
@@ -76,6 +82,8 @@ try:
     код который может вызвать ошибку
 except Ошибка которая может возникнуть:
     код, который сработает, если в try ошибка вышла
+else:
+    код, который сработает, если в try ошибка не вышла
 finally:
     код который сработает в любом случае
 
@@ -89,6 +97,8 @@ else:
 
 # если в input придет число - выйдет то, что мы написали в else 
 # если в input придет не число - выйдет то, что мы написали в except
+
+# raise  - вызвать ошибку
 
 try:
     num = int(input('abcdefg'))
@@ -120,3 +130,21 @@ try:
 except:     #отлавливает все ошибки
     print("была обработана ошибка")
 
+    try:
+    print("hello")
+    raise
+except:
+    print("except")
+else:
+    print('else')
+finally:
+    print('finally')
+
+try:
+    5 + '5'
+except Exception as error: # отловятся все ошибки + мы их записываем в переменную error
+    print(error)
+else:
+    print("все ок")
+finally:
+    print('finally')
