@@ -56,4 +56,3 @@ obj1.add(4,5) #9
 obj2.add(4,5) #9
 
 print(eval(input()))
-
